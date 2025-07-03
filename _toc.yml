@@ -1,0 +1,18 @@
+format: jb-book
+root: index.md
+parts:
+  - caption: 示例部分
+    chapters:
+      - file: 1_example_chapter/README.md
+        sections:
+          - file: 1_example_chapter/1_example_section/README.md
+            sections:
+              - file: 1_example_chapter/1_example_section/1_example_article.md
+              - file: 1_example_chapter/1_example_section/1_example_article2.md
+          - file: 1_example_chapter/2_example_article3.md
+  - caption: 示例部分2
+    chapters:
+      - file: 2_example_chapter2/README.md
+        sections:
+          - file: 2_example_chapter2/1_example_section2/README.md
+      - file: 3_example_chapter3/README.md

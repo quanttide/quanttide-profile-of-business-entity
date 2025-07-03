@@ -1,0 +1,7 @@
+# https://jupyterbook.org/en/stable/customize/config.html
+name: quanttide-example-of-documentation
+title: 量潮示例文档项目
+author: 量潮科技
+description: 量潮文档项目实例
+# Jupyter Book Config
+only_build_toc_files: true
