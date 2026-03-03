@@ -1,8 +1,0 @@
-format: jb-book
-root: index.md
-chapters:
-- file: businesses/README.md
-  sections:
-  - file: businesses/qtdata/README.md
-  - file: businesses/qtdata/research.md
-  - file: businesses/qtdata/enterprise.md
