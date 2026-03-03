@@ -1,0 +1,38 @@
+name: "一杯氢气H2"
+bilibili_url: "https://space.bilibili.com/177939479"
+description: "功成弗居，是以不去"
+expertise:
+  - "哲学"
+  - "历史"
+  - "政治"
+tags:
+  - "哲学"
+  - "历史"
+  - "政治"
+  - "百家争鸣"
+  - "墨家"
+video_count: 33 # 视频总数
+series_count: 5 # 合集/系列数
+latest_video: # 最新视频信息
+  title: "逻辑哲学、唯物史观：墨子的一切理想与遗憾【百家争鸣16】"
+  publish_date: "2025-03-15"
+  views: "21.5万"
+  likes: 1092
+collections: # 用户喜欢的合集
+  - name: "不止周期律" # 合集名称
+    video_count: 3 # 视频数量
+    update_date: "02-14" # 更新时间
+    videos: # 视频列表
+      - title: "秘书部门实权化 宫廷总是出宰相"
+        views: "5.1万"
+        likes: 48
+        duration: "16:42"
+      - title: "监察机构行政化 御史总是成诸侯"
+        views: "6.3万"
+        likes: 84
+        duration: "10:13"
+      - title: "临时项目常设化 工地总是变衙门"
+        views: "1.3万"
+        likes: 20
+        duration: "11:09"
+recommended_reason: "内容聚焦哲学、历史、政治领域，深度解析百家争鸣、墨家理想等主题，适合学习相关学科知识"

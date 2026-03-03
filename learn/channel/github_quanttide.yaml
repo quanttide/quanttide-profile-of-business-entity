@@ -1,0 +1,59 @@
+name: "quanttide"
+github_url: "https://github.com/quanttide"
+description: "量潮团队 GitHub 组织"
+repositories:
+  - name: "qtcloud-think"
+    github_url: "https://github.com/quanttide/qtcloud-think"
+    description: "量潮思考云 - 思维外脑，思维收集与澄清工具"
+    expertise:
+      - "AI"
+      - "CLI"
+      - "思维工具"
+    tags:
+      - "AI"
+      - "CLI"
+      - "Python"
+      - "思维工具"
+    language: "Python"
+    license: "Apache-2.0"
+    commits: 44
+    releases: 3
+    latest_release:
+      version: "v0.0.3"
+      date: "2025-02-19"
+      title: "信息状态分类"
+    features:
+      - "思维收集：输入想法，AI 判断清晰度"
+      - "多轮澄清：模糊想法通过对话逐步澄清"
+      - "结构化存储：保存为 Markdown 格式"
+    recommended_reason: "思维外脑工具，帮助收集和澄清思维，可作为 AI Agent 应用开发的参考"
+
+  - name: "qtadmin"
+    github_url: "https://github.com/quanttide/qtadmin"
+    description: "量潮管理后台"
+    expertise:
+      - "管理后台"
+      - "Django"
+    tags:
+      - "Python"
+      - "Django"
+      - "管理后台"
+    language: "Python 46.0%, C++ 21.4%, CMake 18.5%, Dart 9.4%"
+    commits: 52
+    recommended_reason: "管理后台项目，参考其架构和代码组织方式"
+
+  - name: "quanttide-profile-of-founder"
+    github_url: "https://github.com/quanttide/quanttide-profile-of-founder"
+    description: "量潮创始人档案 - 思维碎片与认知架构"
+    expertise:
+      - "知识管理"
+      - "AI"
+      - "个人知识库"
+    tags:
+      - "知识管理"
+      - "AI"
+      - "Markdown"
+      - "个人知识库"
+    language: "Markdown"
+    commits: 30
+    recommended_reason: "个人知识管理实践，AI 辅助知识整理的实验场"
