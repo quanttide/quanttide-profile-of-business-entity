@@ -19,6 +19,6 @@
 - 新增 learn/：学习
 - 新增 mr/：市场研究
 - 新增 product/：产品
-- 新增 qtclass/：培训
-- 新增 qtdata/：数据
+- 新增 qtclass/：量潮课堂（培训品牌）
+- 新增 qtdata/：量潮数据（数据品牌）
 - 新增 scm/：供应链
