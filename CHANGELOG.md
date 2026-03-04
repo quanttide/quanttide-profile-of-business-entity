@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-03-04
+
+### 变更
+
+- 重构 delib/ 目录结构
+- 重构 execute/ 目录结构
+- 删除 delib/asset、delib/default、delib/public 目录
+- 新增 delib/bylaw、delib/issue 目录
+- 新增 execute/qtclass、execute/learn 目录
+
 ## [0.1.0] - 2026-03-03
 
 ### 新增
