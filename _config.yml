@@ -1,0 +1,37 @@
+# Jupyter Book Configuration
+# https://jupyterbook.org/en/stable/customize/config.html
+
+project:
+  name: quanttide-profile-of-business-entity
+  title: 量潮科技档案
+  author: 量潮科技
+  description: 量潮科技企业工作实录文档库
+  copyright: "2026"
+  repository:
+    url: https://github.com/quanttide/quanttide-profile-of-business-entity
+    branch: main
+
+launch_buttons:
+  binderhub: false
+  jupyterhub: false
+  thebe: false
+  colab: false
+
+html:
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+  home_page_in_navbar: true
+  navbar_footer_text: "量潮科技"
+
+markdown:
+  markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: True
+
+sphinx:
+  build:
+    builder: html
+  extra_extensions:
+    - sphinx.ext.autodoc
+    - sphinx.ext.viewcode

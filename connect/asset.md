@@ -21,13 +21,13 @@
 
 ### 量潮科技档案
 
-量潮科技档案已发布 0.1.1 版本
-链接：GitHub - quanttide/quanttide-profile-of-business-entity: 量潮企业档案
+量潮科技档案已发布 0.1.2 版本
+链接：GitHub - quanttide/quanttide-profile-of-business-entity: 量潮科技档案
 要点：
 - 新增 qtclass/：量潮课堂（培训品牌）
 - 新增 qtdata/：量潮数据（数据品牌）
 - 新增多个工作区模块（agent、brand、code、delib、enterpr、execute、hr、iam、learn、mr、product、scm）
-- 本轮更新：重构 delib 和 execute 目录结构
+- 本轮更新：新增 Jupyter Book 配置和 AGENTS.md
 
 ### 领域档案
 

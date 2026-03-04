@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-03-04
+
+### 新增
+
+- 新增 _config.yml：Jupyter Book 配置
+- 新增 _toc.yml：目录结构（业务/职能分类）
+- 新增 AGENTS.md：Agent 工作指南
+
+### 变更
+
+- 更新 connect/asset.md 版本信息
+
 ## [0.1.1] - 2026-03-04
 
 ### 变更

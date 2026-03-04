@@ -1,0 +1,165 @@
+format: jb-book
+root: index.md
+
+parts:
+  - caption: 业务
+    chapters:
+      - file: qtclass/index.md
+        title: 量潮课堂
+        sections:
+          - file: qtclass/course/index.md
+          - file: qtclass/course/big_data.md
+          - file: qtclass/course/data_science.md
+          - file: qtclass/train/index.md
+          - file: qtclass/train/plan.md
+      - file: qtdata/README.md
+        title: 量潮数据
+
+  - caption: 职能
+  - caption: 业务
+        sections:
+
+
+
+
+          职能      - file: connect/index.md
+        sections:
+          - file: connect/asset.md
+      - file: delib/bylaw/secretariat.md
+        sections:
+          - file: delib/issue/asset/index.md
+          - file: delib/issue/asset/github.md
+          - file: delib/issue/founder/index.md
+          - file: delib/issue/qtclass/index.md
+          - file: delib/issue/finance/index.md
+          - file: delib/issue/default/share.md
+          - file: delib/issue/default/write.md
+          - file: delib/issue/default/org.md
+          - file: delib/issue/default/think.md
+          - file: delib/issue/default/code.md
+          - file: delib/issue/default/consult.md
+      - file: execute/README.md
+        sections:
+          - file: execute/asset/index.md
+          - file: execute/qtclass/index.md
+          - file: execute/learn/README.md
+          - file: execute/learn/health.md
+          - file: execute/default/write.md
+          - file: execute/default/mr.md
+      - file: agent/index.md
+        sections:
+          - file: agent/knowl.md
+          - file: agent/think.md
+          - file: agent/write.md
+      - file: brand/index.md
+        sections:
+          - file: brand/main.md
+          - file: brand/founder.md
+      - file: code/README.md
+        sections:
+          - file: code/qtadmin/index.md
+      - file: enterpr/README.md
+        sections:
+          - file: enterpr/media.md
+          - file: enterpr/business/index.md
+          - file: enterpr/business/class.md
+      - file: hr/README.md
+        sections:
+          - file: hr/train/index.md
+      - file: iam/feishu.md
+      - file: learn/note/index.md
+        sections:
+          - file: learn/note/README.md
+          - file: learn/note/llm.md
+          - file: learn/note/meta.md
+          - file: learn/note/infra.md
+          - file: learn/note/finance.md
+          - file: learn/note/connect.md
+          - file: learn/note/write.md
+          - file: learn/note/code.md
+          - file: learn/note/agent.md
+          - file: learn/channel/README.md
+      - file: mr/README.md
+        sections:
+          - file: mr/agent.md
+          - file: mr/code.md
+          - file: mr/data.md
+          - file: mr/food.md
+          - file: mr/media.md
+          - file: mr/think.md
+      - file: product/index.md
+        sections:
+          - file: product/qtcloud/index.md
+          - file: product/qtcloud/roadmap.md
+          - file: product/qtcloud/feature.md
+          - file: product/qtcloud/layer.md
+          - file: product/qtcloud_iam/index.md
+          - file: product/qtcloud_meta/index.md
+          - file: product/qtcloud_think/index.md
+          - file: product/qtcloud_media/infra.md
+          - file: product/qtadmin/index.md
+        sections:
+                  sections:
+          - file: delib/issue/asset/index.md
+          - file: delib/issue/asset/github.md
+          - file: delib/issue/founder/index.md
+          - file: delib/issue/qtclass/index.md
+          - file: delib/issue/finance/index.md
+          - file: delib/issue/default/share.md
+          - file: delib/issue/default/write.md
+          - file: delib/issue/default/org.md
+          - file: delib/issue/default/think.md
+          - file: delib/issue/default/code.md
+          - file: delib/issue/default/consult.md
+        sections:
+
+
+
+
+
+                  sections:
+
+
+                  sections:
+
+                  sections:
+                  sections:
+
+
+                  sections:
+                  sections:
+          - file: learn/note/README.md
+          - file: learn/note/llm.md
+          - file: learn/note/meta.md
+          - file: learn/note/infra.md
+          - file: learn/note/finance.md
+          - file: learn/note/connect.md
+          - file: learn/note/write.md
+          - file: learn/note/code.md
+          - file: learn/note/agent.md
+          - file: learn/channel/README.md
+        sections:
+
+
+
+
+
+                  sections:
+          - file: product/qtcloud/index.md
+          - file: product/qtcloud/roadmap.md
+          - file: product/qtcloud/feature.md
+          - file: product/qtcloud/layer.md
+          - file: product/qtcloud_iam/index.md
+          - file: product/qtcloud_meta/index.md
+          - file: product/qtcloud_think/index.md
+          - file: product/qtcloud_media/infra.md
+          - file: product/qtadmin/index.md
+      - file: scm/index.md
+        title: 供应链
+        sections:
+                  sections:
+          - file: scm/README.md
+
+          - file: scm/connect/feishu_im.md
+
+          - file: scm/docs/feishu_docs.md
