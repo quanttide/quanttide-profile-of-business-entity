@@ -10,6 +10,15 @@
 
 ## 资料
 
-用例：https://github.com/quanttide/quanttide-archive-of-founder/tree/v0.2.0/platform/tests/fixtures/default/essay
-代码：https://github.com/quanttide/quanttide-archive-of-founder/blob/v0.2.0/platform/src/knowl.py
-报告：https://github.com/quanttide/quanttide-archive-of-founder/tree/v0.2.0/platform/tests/fixtures/knowl/essay
+### 用例
+
+- 输入：https://github.com/quanttide/quanttide-archive-of-founder/tree/v0.2.0/platform/tests/fixtures/default/essay
+- 输出：https://github.com/quanttide/quanttide-archive-of-founder/tree/v0.2.0/platform/tests/fixtures/knowl/essay
+
+### 文档
+
+- 教程：https://github.com/quanttide/quanttide-tutorial-of-business-entity/blob/main/write/workflow.md
+
+### 代码
+
+- 示例：https://github.com/quanttide/quanttide-archive-of-founder/blob/v0.2.0/platform/src/knowl.py
