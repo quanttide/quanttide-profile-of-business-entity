@@ -1,9 +1,15 @@
 # Lecture 2
 
-## 设计
+## 提纲
 
 目标：探索式原型验证
 任务：
 - 业务 Vibe 捕捉：拆解写作系统的向量联想、知识提取等环节。
-- 原型快速裂变：利用感知环境，驱动 AI 在  下编写 。此阶段鼓励“发散式提示”，旨在不计工程代价地验证逻辑可行性。
+- 原型快速裂变：利用感知环境，驱动AI编写 。此阶段鼓励“发散式提示”，旨在不计工程代价地验证逻辑可行性。
 交付物：完成 10 个 essay 示例跑测、输出符合业务直觉的 JSON 结果。
+
+## 资料
+
+用例：https://github.com/quanttide/quanttide-archive-of-founder/tree/v0.2.0/platform/tests/fixtures/default/essay
+代码：https://github.com/quanttide/quanttide-archive-of-founder/blob/v0.2.0/platform/src/knowl.py
+报告：https://github.com/quanttide/quanttide-archive-of-founder/tree/v0.2.0/platform/tests/fixtures/knowl/essay
