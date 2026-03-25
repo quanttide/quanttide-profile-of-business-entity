@@ -11,7 +11,6 @@ parts:
           - file: qtclass/course/big_data.md
           - file: qtclass/course/data_science.md
           - file: qtclass/train/index.md
-          - file: qtclass/train/plan.md
       - file: qtdata/README.md
         title: 量潮数据
 
