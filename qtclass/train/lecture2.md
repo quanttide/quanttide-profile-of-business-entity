@@ -21,4 +21,4 @@
 
 ### 代码
 
-- 示例：https://github.com/quanttide/quanttide-archive-of-founder/blob/v0.2.0/platform/src/knowl.py
+- 示例：
