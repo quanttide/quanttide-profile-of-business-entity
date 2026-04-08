@@ -1,37 +1,6 @@
 # CONTRIBUTING.md - 贡献指南
 
-## 项目概述
-
-本项目是**量潮科技档案**知识库，基于 Jupyter Book 构建的文档项目。非代码仓库，无需 lint/test 流程。
-
-## 目录结构
-
-```
-entity/company/
-├── index.md           # 首页
-├── _config.yml        # Jupyter Book 配置
-├── _toc.yml           # 目录结构
-├── CHANGELOG.md       # 版本历史
-├── README.md          # 项目说明
-├── AGENTS.md          # 工作指南
-│
-├── qtclass/           # 量潮课堂（业务）
-├── qtdata/            # 量潮数据（业务）
-│
-├── connect/           # 沟通（职能）
-├── delib/             # 议事（职能）
-├── execute/           # 执行（职能）
-├── agent/             # 智能体（职能）
-├── brand/             # 品牌（职能）
-├── code/              # 编程（职能）
-├── enterpr/           # 企业（职能）
-├── hr/                # 人力资源（职能）
-├── iam/               # 身份与访问管理（职能）
-├── learn/             # 学习（职能）
-├── mr/                # 市场研究（职能）
-├── product/           # 产品（职能）
-└── scm/               # 供应链（职能）
-```
+本项目是**量潮科技档案**知识库，基于 Jupyter Book 构建的文档项目。
 
 ## 构建命令
 
@@ -105,18 +74,6 @@ yamllint .
 - 使用小写字母
 - 单词间用下划线 `_` 分隔
 - 示例：`qtclass/index.md`、`big_data.md`
-
-### 目录结构
-
-```
-板块名/
-├── index.md        # 板块入口，内容摘要
-├── README.md       # 板块说明（可选）
-├── 子1.md
-└── 子目录主题/
-    ├── index.md
-    └── 内容.md
-```
 
 ---
 
