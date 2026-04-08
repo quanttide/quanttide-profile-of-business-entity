@@ -14,4 +14,8 @@
 
 ### quanttide-archive（归档站，archive租户）
 
-由原 xmucpp 组织改名，并合并其他旧 org 及主组织中的归档仓库。
+归档仓库组织，合并其他旧 org 及主组织中的归档仓库。
+
+### xmucpp（拟解散）
+
+历史遗留组织，计划解散后迁移至 quanttide-archive。
