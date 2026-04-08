@@ -2,6 +2,25 @@
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-04-08
+
+### 新增
+
+- 新增 ROADMAP.md：版本路线图
+
+### 变更
+
+- 重构文档结构：分拆 AGENTS.md 为 AGENTS.md 和 CONTRIBUTING.md
+- 重构 asset 目录：移动 delib/asset/ 到 asset/
+- 更新 asset/memory_model.md：标题改为"量潮记忆模型"
+- 更新 asset/github_org.md：更新 GitHub 组织信息
+- 更新 README.md：补充项目说明
+- 更新 AGENTS.md：简化为文档索引
+
+### 移除
+
+- 删除 delib/asset/ 目录
+
 ## [0.1.3] - 2026-03-05
 
 ### 新增
