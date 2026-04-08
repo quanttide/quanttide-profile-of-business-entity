@@ -47,5 +47,5 @@
 | | 人类友好 | AI友好 | 规则引擎友好 |
 |------|--------|--------|--------|
 | **宪法** | Bylaw（工作章程） | Specification（工程标准） | Toolkit（工具箱） |
-| **法律** | Handbook（工作手册） | Gallery（工作案例） | Platform（平台） |
-| **法理** | Tutorial（工作教程） | Essay（工作札记） | Example（示例程序） |
+| **法律** | Gallery（工作案例） | Handbook（工作手册） | Platform（平台） |
+| **法理** | Essay（工作札记） | Tutorial（工作教程） | Example（示例程序） |
