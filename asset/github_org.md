@@ -12,6 +12,6 @@
 
 量潮科技内部组织，管理公司内部使用的仓库，包括 qtadmin、qtcloud-data 等业务项目。
 
-### qtarchive（归档站，archive租户）
+### quanttide-archive（归档站，archive租户）
 
 由原 xmucpp 组织改名，并合并其他旧 org 及主组织中的归档仓库。
