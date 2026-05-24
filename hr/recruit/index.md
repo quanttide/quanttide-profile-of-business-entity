@@ -7,6 +7,14 @@
 3. 面试
 4. 录用通知
 
+## 笔试题
+
+- [全栈工程师](full-stack-engineer.md)
+- [数据工程师](data-engineer.md)
+- [算法工程师](algorithm-engineer.md)
+- [人事经理](hr-manager.md)
+- [新媒体运营](new-media-operator.md)
+
 ### 管理能力
 
 - 团队建设
