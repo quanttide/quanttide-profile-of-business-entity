@@ -12,7 +12,11 @@
 
 了解项目背景和价格指数概念：
 
-- 价格指数的概念和计算方式（重点理解链式指数、加权平均等核心概念）
+- 价格指数的概念和计算方式：
+  - https://zhuanlan.zhihu.com/p/21331379
+  - https://zhuanlan.zhihu.com/p/21347457
+  - https://zhuanlan.zhihu.com/p/21798044
+  - https://zhuanlan.zhihu.com/p/22036353
 - Online and official price indexes: Measuring Argentina's inflation（重点阅读 3.1，了解价格指数的编制方法）
 
 ## 实践目标
