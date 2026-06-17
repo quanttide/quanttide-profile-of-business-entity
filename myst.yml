@@ -1,0 +1,7 @@
+version: 1
+project:
+  title: 量潮科技工作档案
+  description: 量潮科技工作档案
+  license: CC-BY-4.0
+site:
+  template: book-theme
