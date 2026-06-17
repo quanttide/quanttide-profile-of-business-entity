@@ -8,6 +8,10 @@
 
 随着电商平台数据的大规模生成，构建高频（按日）价格指数成为可能。电商数据具备更新快、覆盖面广、精度高等优势，可突破传统 CPI 的限制，形成对市场更灵敏的监测手段。
 
+本实践项目源于量潮科技前身 —— 厦门大学 China's Prices Project（CPP）课题组十年前的积累。CPP 参考 MIT Billion Prices Project 和 Cavallo 的研究，基于中国官方 CPI 分类标准，每天采集天猫和京东平台 1000 余个关键词、约 500 万数据点，编制中国高频线上价格指数。CPP 经历了从个人电脑爬虫到腾讯云服务器集群、从 13 人团队手动维护到自动化系统的技术演进，这些积累沉淀为本实践项目的课程设计基础。
+
+十年后的今天，本项目采用 2026 年的最新技术栈重新实现这一经典课题：以对象存储替代本地文件、ClickHouse 替代 MongoDB、Python 自动化流水线替代手动运维，打造一套现代化、高可用的高频价格指数计算方案。
+
 ## 实践目标
 
 - 熟练掌握对象存储的数据管理能力
@@ -15,16 +19,16 @@
 - 基于 Python 的自动化计算流程，实现一套自动化、高并发、可复用的价格指数计算体系
 - 使用数据湖的解决方案（可选，附加题）
 
-### 项目背景
+### 推荐阅读
 
-了解项目背景和价格指数概念：
+了解项目背景和价格指数概念（以下为我司前身 CPP 课题组在知乎发布的专栏文章，记录了项目的完整发展历程）：
 
-- 价格指数的概念和计算方式：
-  - https://zhuanlan.zhihu.com/p/21331379
-  - https://zhuanlan.zhihu.com/p/21347457
-  - https://zhuanlan.zhihu.com/p/21798044
-  - https://zhuanlan.zhihu.com/p/22036353
-- Online and official price indexes: Measuring Argentina's inflation（重点阅读 3.1，了解价格指数的编制方法）
+- **China's Prices Project（CPP）专栏文章**：
+  - [项目简介 —— China's Prices Project](https://zhuanlan.zhihu.com/p/21331379)：介绍项目目标、参考 MIT Billion Prices Project 与 Cavallo 的研究框架、基于官方 CPI 分类编制采集清单、每日采集天猫和京东约 500 万数据点
+  - [流水账 | CPP 的第一个半年](https://zhuanlan.zhihu.com/p/21347457)：项目从零到一的历程，包括团队组建（13 人）、技术演进（从个人电脑定时爬虫到腾讯云服务器集群）、爬虫迭代（Tmall 第 23 版、JD 第 12 版）、小文件 CSV 存储带来的数据管理挑战
+  - [项目进展 | 2016 年 7 月](https://zhuanlan.zhihu.com/p/21798044)：爬虫系统稳定运行三个月，面临硬件资源限制、分布式数据采集与集中存储的矛盾、MongoDB 数据库方案设计
+  - [项目成果 | Tmall Daily Price Index](https://zhuanlan.zhihu.com/p/22036353)：基于官方 CPI 编制标准的 Tmall 日度环比指数成果展示，验证了电商数据构建高频价格指数的可行性
+- **学术论文**：*Online and official price indexes: Measuring Argentina's inflation*（重点阅读 3.1，了解价格指数的编制方法）
 
 ## 数据源
 
