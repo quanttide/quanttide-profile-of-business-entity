@@ -2,6 +2,39 @@
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-06-18
+
+### 新增
+
+- 全业务域配置数据：employees.json、departments.json、courses.json、resources.json、projects.json、datasets.json、interviews.json、resumes.json
+- positions.json：岗位定义数据
+- auth/users.json：用户认证数据
+- .gitignore：排除构建和 IDE 产物
+
+### 变更
+
+- 笔试题统一归入 qtrecurit/questions/ 文件夹
+- hr/ 目录更名为 human/
+- 运行时认证数据移出版本控制
+- 规则文档从 human/ 移至 connect/
+
+## [0.1.4] - 2026-03-28
+
+### 新增
+
+- AGENTS.md、CONTRIBUTING.md、ROADMAP.md：项目管理与协作文档体系
+- 招聘考核文档：HR 经理、销售经理、数据工程师、商务拓展、课程助教、项目经理岗位笔试题及邮件模板
+- 报价档案：含人员分级、价格表、客户类型、溢价让利规则、审批层级
+- 课程文档：量潮课堂大数据导论实践课
+- 客户画像与交付清单
+- GitHub 组织关系梳理文档
+
+### 变更
+
+- delib/ 目录重构：分拆议事档案、执行记录等子目录
+- 许可证切换至 CC-BY-4.0
+- 移入 founder 仓库中的招聘考核题和邮件模板
+
 ## [0.1.3] - 2026-03-05
 
 ### 新增
