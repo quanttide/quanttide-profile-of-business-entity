@@ -1,0 +1,101 @@
+# 母题与风格数据结构 (实验 2.1)
+
+motif:
+  description: 母题 — 叙事中重复出现的主题、意象、情节或人物模式
+  fields:
+    - name: id
+      type: string
+      description: 唯一标识 (如 m-001)
+
+    - name: name
+      type: string
+      description: 母题名称
+
+    - name: type
+      type: enum
+      values: [theme, image, plot, character]
+      description: 主题 / 意象 / 情节 / 人物
+
+    - name: description
+      type: string
+      description: 母题描述
+
+    - name: sub_type
+      type: string
+      description: 子类型 (自由标签)
+
+    - name: occurrences
+      type: array
+      items:
+        type: object
+        fields:
+          - name: fiction
+            type: string
+            description: 来源作品
+          - name: excerpt
+            type: string
+            description: 原文片段
+          - name: note
+            type: string
+            description: 备注
+
+  example:
+    - id: m-001
+      name: 雨天重逢
+      type: plot
+      description: 多年后意外相遇的场景，常伴随雨天
+      sub_type: 重逢
+      occurrences:
+        - fiction: 职场言情/咖啡厅重逢.md
+          excerpt: 春天的一个工作日的下午，咖啡店外下着淅淅沥沥的小雨。
+          note: 开篇定调，标志性重逢场景
+
+style:
+  description: 风格 — 叙事中的语言特征与表现手法
+  fields:
+    - name: id
+      type: string
+      description: 唯一标识 (如 s-001)
+
+    - name: name
+      type: string
+      description: 风格名称
+
+    - name: tags
+      type: array
+      items: string
+      description: 风格标签
+
+    - name: features
+      type: object
+      description: 风格特征向量
+      fields:
+        - name: avg_sentence_length
+          type: float
+          description: 平均句长（字符）
+        - name: dialogue_ratio
+          type: float
+          description: 对话占比
+        - name: lexical_diversity
+          type: float
+          description: 词汇多样性 (TTR)
+        - name: rhetorical_density
+          type: float
+          description: 修辞密度
+
+    - name: sample_excerpts
+      type: array
+      items: string
+      description: 风格样本片段
+
+  example:
+    - id: s-001
+      name: 细腻心理描写
+      tags: [心理描写, 感官细节, 都市]
+      features:
+        avg_sentence_length: 25.0
+        dialogue_ratio: 0.3
+        lexical_diversity: 0.6
+        rhetorical_density: 0.15
+      sample_excerpts:
+        - 他的喉咙发痒，舌头微微动了动。心跳加速，浑身燥热，呼吸几乎停滞。

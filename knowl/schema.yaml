@@ -1,0 +1,80 @@
+# 图式数据结构 — 从认知要素中识别的重复认知模式
+# schema: 情境 + 响应模式的组合，构成可迁移的心智框架
+
+schema:
+  description: 图式 — 从认知要素中归纳的重复认知模式，含情境 + 响应 + 变体
+  fields:
+    - name: id
+      type: string
+      description: 图式唯一标识 (如 sc-001)
+
+    - name: name
+      type: string
+      description: 图式名称
+
+    - name: pattern
+      type: object
+      description: 图式核心模式
+      fields:
+        - name: trigger_situation
+          type: string
+          description: 触发情境概括（什么条件下触发）
+        - name: typical_response
+          type: string
+          description: 典型响应模式（怎么应对）
+        - name: cognitive_bias
+          type: string | null
+          description: 潜在的认知偏差
+
+    - name: occurrences
+      type: array
+      description: 该图式在实际认知数据中的实例
+      items:
+        type: object
+        fields:
+          - name: source
+            type: string
+            description: 来源文件
+          - name: excerpt
+            type: string
+            description: 相关原文片段
+          - name: pattern_match
+            type: string
+            description: 匹配的模式描述
+
+    - name: variants
+      type: array
+      description: 变体（同一图式在不同情境下的不同表现）
+      items:
+        type: object
+        fields:
+          - name: name
+            type: string
+            description: 变体名称
+          - name: situation_context
+            type: string
+            description: 情境差异
+          - name: response_diff
+            type: string
+            description: 响应差异
+
+    - name: frequency
+      type: integer
+      description: 出现次数
+
+  example:
+    - id: sc-001
+      name: 团队脆弱期的收缩策略
+      pattern:
+        trigger_situation: 团队面临冲击或人员变动风险
+        typical_response: 收缩关注范围、只对核心成员投入精力
+        cognitive_bias: 过度防御（高估风险）
+      occurrences:
+        - source: journal/default/2026-06-13.md
+          excerpt: 不主动找我就不花精力
+          pattern_match: 面对不确定的人际风险，选择收缩社交投入
+      variants:
+        - name: 预防性收缩
+          situation_context: 没有人真正离开，只是预感
+          response_diff: 提前做隔离措施而非事后应对
+      frequency: 3

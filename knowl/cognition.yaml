@@ -1,0 +1,125 @@
+# 认知数据结构 — 从日记中提取的最小认知单元
+# cognition: 情境 + 意图 + 想法 + 图式
+
+cognition:
+  description: 认知要素 — 从个人叙事中提取的结构化认知单元，含图式识别
+  fields:
+    - name: segment_id
+      type: string
+      description: 段落标识 (如 001)
+
+    - name: source
+      type: string
+      description: 来源文件
+
+    - name: situation
+      type: object
+      description: 情境 — 认知发生的场景
+      fields:
+        - name: time
+          type: object
+          fields:
+            - name: raw
+              type: string | null
+              description: 原文时间表述
+            - name: inferred_date
+              type: string | null
+              description: 推断日期
+        - name: location
+          type: string | null
+          description: 地点
+        - name: participants
+          type: array
+          items: string
+          description: 参与者
+        - name: activity
+          type: string
+          description: 活动概括（15字）
+        - name: mood
+          type: object
+          description: 情绪状态
+          fields:
+            - name: raw
+              type: string | null
+              description: 原文情绪词
+            - name: valence
+              type: integer
+              description: 愉悦度 -3 ~ +3
+              range: [-3, 3]
+            - name: arousal
+              type: integer
+              description: 激活度 0 ~ 5
+              range: [0, 5]
+
+    - name: intentions
+      type: array
+      description: 意图 — 行动导向的认知产出
+      items:
+        type: object
+        fields:
+          - name: type
+            type: enum
+            values: [goal, motive, plan, commitment]
+            description: 目标 / 动机 / 计划 / 承诺
+          - name: content
+            type: string
+            description: 意图原文
+
+    - name: ideas
+      type: array
+      description: 想法 — 认知产出（非行动导向）
+      items:
+        type: object
+        fields:
+          - name: type
+            type: enum
+            values: [insight, hypothesis, question, analogy]
+            description: 洞察 / 假设 / 疑问 / 类比
+          - name: content
+            type: string
+            description: 想法原文
+
+    - name: schemas
+      type: array
+      description: 图式 — 本段认知触发的重复认知模式
+      items:
+        type: object
+        fields:
+          - name: domain
+            type: string
+            description: 所属领域（如"叙事工程"、"系统架构"、"团队管理"）
+          - name: name
+            type: string
+            description: 图式名称（如"团队脆弱期的收缩策略"）
+          - name: trigger
+            type: string
+            description: 本段中触发的具体情境
+          - name: response
+            type: string
+            description: 本段中的响应表现
+
+  example:
+    - segment_id: "001"
+      source: "journal/2026-06-01.md"
+      situation:
+        time:
+          raw: "今天上午"
+          inferred_date: "2026-06-01"
+        location: "办公室"
+        participants: ["团队", "总裁", "秘书长"]
+        activity: "团队协同 — 同步项目情况"
+        mood:
+          raw: "调节过来"
+          valence: 0
+          arousal: 2
+      intentions:
+        - type: plan
+          content: "推进 qtcloud-code 重构方案"
+      ideas:
+        - type: insight
+          content: "实验方向应该聚焦在单个变量的精确控制"
+      schemas:
+        - name: "面对不确定的收缩策略"
+          domain: "团队管理"
+          trigger: "团队面临人员变动风险"
+          response: "只对核心成员投入精力"
