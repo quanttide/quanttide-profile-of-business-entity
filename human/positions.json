@@ -1,0 +1,10 @@
+{
+  "records": {
+    "7f47c8731cebc59e51fd86f2f06f0217": {
+      "id": "7f47c8731cebc59e51fd86f2f06f0217",
+      "name": "全栈工程师",
+      "department": "产品研发部",
+      "description": "前后端全栈开发，Go + Flutter + Rust + Python"
+    }
+  }
+}
