@@ -1,0 +1,12 @@
+{
+  "records": {
+    "af906f3d373d5e7c6cf4970e2a39f726": {
+      "id": "af906f3d373d5e7c6cf4970e2a39f726",
+      "name": "生产ECS-01",
+      "type": "ecs",
+      "status": "running",
+      "region": "cn-east",
+      "created_at": ""
+    }
+  }
+}

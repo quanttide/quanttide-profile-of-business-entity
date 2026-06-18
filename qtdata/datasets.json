@@ -1,0 +1,12 @@
+{
+  "records": {
+    "dfffecb3e108d870800cb03ce2c45694": {
+      "id": "dfffecb3e108d870800cb03ce2c45694",
+      "name": "销售数据集",
+      "description": "Q2销售数据",
+      "version": "1.0",
+      "status": "ready",
+      "created_at": ""
+    }
+  }
+}

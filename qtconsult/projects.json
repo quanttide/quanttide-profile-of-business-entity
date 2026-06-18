@@ -1,0 +1,12 @@
+{
+  "records": {
+    "9ccc33708bc59de95fef3d86ed918d24": {
+      "id": "9ccc33708bc59de95fef3d86ed918d24",
+      "name": "数字化转型咨询",
+      "stage": "调研",
+      "client": "某制造企业",
+      "status": "active",
+      "created_at": ""
+    }
+  }
+}
