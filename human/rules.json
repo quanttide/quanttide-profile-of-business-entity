@@ -1,0 +1,131 @@
+{
+  "records": {
+    "088e03b6024d057f77479a5cd5ea8273": {
+      "id": "088e03b6024d057f77479a5cd5ea8273",
+      "name": "课程助教",
+      "keywords": [
+        "课程助教",
+        "助教"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "0cbd19d02b798532ea0b7123e77fbae5": {
+      "id": "0cbd19d02b798532ea0b7123e77fbae5",
+      "name": "销售经理",
+      "keywords": [
+        "销售"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "16433e0c03965ed16d4135c7b7433b76": {
+      "id": "16433e0c03965ed16d4135c7b7433b76",
+      "name": "咨询助理",
+      "keywords": [
+        "咨询助理",
+        "咨询"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "1d8d095c956adc7a3a3d7e628c17feef": {
+      "id": "1d8d095c956adc7a3a3d7e628c17feef",
+      "name": "人事经理",
+      "keywords": [
+        "HR",
+        "人力资源"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "1ebf6f6510824298352126d7aa62d18d": {
+      "id": "1ebf6f6510824298352126d7aa62d18d",
+      "name": "法务实习生",
+      "keywords": [
+        "法务",
+        "法律",
+        "合规"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "24554f21da0675a113f93bc0025dfb49": {
+      "id": "24554f21da0675a113f93bc0025dfb49",
+      "name": "新媒体运营",
+      "keywords": [
+        "新媒体运营",
+        "运营"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "359f4b24b69c917010951a348f3d6763": {
+      "id": "359f4b24b69c917010951a348f3d6763",
+      "name": "商务经理",
+      "keywords": [
+        "商务",
+        "BD"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "85df1c615fe670ac4fa1564a0c02a299": {
+      "id": "85df1c615fe670ac4fa1564a0c02a299",
+      "name": "产品经理",
+      "keywords": [
+        "产品"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "a3a9760365ffcbf259c42d2e1cc5d8e5": {
+      "id": "a3a9760365ffcbf259c42d2e1cc5d8e5",
+      "name": "执行助理",
+      "keywords": [
+        "执行助理",
+        "助理"
+      ],
+      "exclude": [
+        "咨询",
+        "课程"
+      ],
+      "priority": 0
+    },
+    "c25fe07d7b24d24c3417f675e2607526": {
+      "id": "c25fe07d7b24d24c3417f675e2607526",
+      "name": "数据工程师",
+      "keywords": [
+        "数据",
+        "技术实习生",
+        "技术实习"
+      ],
+      "exclude": [
+        "运营"
+      ],
+      "priority": 0
+    },
+    "e4ee520d4eb7c6cf9b5ab34794298e23": {
+      "id": "e4ee520d4eb7c6cf9b5ab34794298e23",
+      "name": "项目经理",
+      "keywords": [
+        "PM",
+        "项目经理"
+      ],
+      "exclude": null,
+      "priority": 0
+    },
+    "f3b3255c76ec25f272512e2d88bd411c": {
+      "id": "f3b3255c76ec25f272512e2d88bd411c",
+      "name": "全栈工程师",
+      "keywords": [
+        "全栈",
+        "后端开发",
+        "后端",
+        "AI应用"
+      ],
+      "exclude": null,
+      "priority": 10
+    }
+  }
+}
