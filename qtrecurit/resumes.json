@@ -1,12 +1,3 @@
 {
-  "records": {
-    "4619e7ed629cdeed931d026421f35df6": {
-      "id": "4619e7ed629cdeed931d026421f35df6",
-      "candidate_name": "赵六",
-      "position": "Go工程师",
-      "stage": "new",
-      "feedback": "",
-      "created_at": ""
-    }
-  }
+  "records": {}
 }

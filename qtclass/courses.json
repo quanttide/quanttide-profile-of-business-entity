@@ -1,12 +1,3 @@
 {
-  "records": {
-    "f9dd60883ff402c55ad4b693991c4056": {
-      "id": "f9dd60883ff402c55ad4b693991c4056",
-      "name": "Rust 实战班",
-      "teacher": "王教授",
-      "schedule": "",
-      "max_students": 30,
-      "status": "active"
-    }
-  }
+  "records": {}
 }
