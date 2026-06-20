@@ -1,0 +1,31 @@
+{
+  "platform": {
+    "description": "平台类数字资产的规范模型。platform 由一组子资产组成，每个子资产定义一种产品形态，path 指明了该子资产的代码模板路径。",
+    "children": [
+      {
+        "id": "cli",
+        "label": "命令行工具",
+        "description": "CLI 是平台的功能入口，提供命令行交互的数字工具",
+        "path": "src/cli"
+      },
+      {
+        "id": "studio",
+        "label": "工作台",
+        "description": "Studio 是平台的图形化管理后台，提供可视化操作界面",
+        "path": "src/studio"
+      },
+      {
+        "id": "lite",
+        "label": "轻量版",
+        "description": "Lite 是平台的移动端或轻量级客户端",
+        "path": "src/lite"
+      },
+      {
+        "id": "site",
+        "label": "站点",
+        "description": "Site 是平台的文档站点或门户网站",
+        "path": "src/site"
+      }
+    ]
+  }
+}
