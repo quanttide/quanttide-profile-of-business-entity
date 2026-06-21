@@ -11,9 +11,9 @@
 
 ### 数据化方向
 
-profile 不仅是文档，也是**数字资产的数据定义层**。各板块的结构化 JSON 文件（`category.json`、`quality.json` 等）将自然语言描述转化为机器可消费的资产模型：
+profile 不仅是文档，也是**数字资产的数据定义层**。各板块的结构化 JSON 文件（`schema.json`、`quality.json` 等）将自然语言描述转化为机器可消费的资产模型：
 
-- **资产类型定义**：如 `asset/category.json` 定义 platform 为复合资产，由 cli/studio/lite/site 四个子资产组成，每个子资产有 `id`、`label`、`description`、`path`
+- **资产类型定义**：如 `asset/schema.json` 定义 platform 为复合资产，由 cli/studio/lite/site 四个子资产组成，每个子资产有 `id`、`label`、`description`、`path`
 - **质量评估标准**：如 `asset/quality.json` 定义叙事/知识/认知三维度评估体系
 - **契约对齐**：结构化数据与 `contract.yaml` 中的资产分类体系保持一致，是契约的具体实现
 
@@ -36,7 +36,7 @@ entity/company/
 ├── execute/           # 执行（职能）
 ├── agent/             # 智能体（职能）
 │   └── ... (含智能体档案)
-├── asset/             # 数字资产 — 含资产模型定义（category.json）和质量评估标准（quality.json）
+├── asset/             # 数字资产 — 含资产模型定义（schema.json）和质量评估标准（quality.json）
 ├── brand/             # 品牌（职能）
 ├── code/              # 编程（职能）
 ├── enterpr/           # 企业（职能）
