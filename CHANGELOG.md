@@ -2,6 +2,24 @@
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-08-31
+
+### 新增
+
+- 氛围编程实践课时 1 任务书（qtclass/course/vibe-coding/）
+
+### 变更
+
+- brand/ 迁移至独立仓库 quanttide-profile-of-brand-management（CC-BY-4.0）
+- custom/persona.md 迁移至教程仓库（tutorial/qtdata/persona.md）
+- connect、learn、product、delib、execute、knowl 归档至 data/archive/profile/
+- business/quotation.md 归档至 data/archive/profile/business/
+
+### 删除
+
+- 删除 code、agent、human、mr、infra、enterpr、custom、qtconsult 目录
+- 删除 iam/feishu.md、asset/quality.json、qtrecurit/criteria.json、course/ceo_assistant_bootcamp.md
+
 ## [0.1.5] - 2026-06-18
 
 ### 新增
