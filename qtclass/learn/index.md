@@ -40,7 +40,7 @@
 |---|---|
 | [schedules.md](schedules.md) | 学习安排：产品/工程/商务/数据/支持五大方向的真实课题谱系 |
 | [careers.md](careers.md) | 成长通道：成长速度参考、负数职级进度条、考核环节、甲方思维 |
-| [vouchers.md](vouchers.md) | 代金券：怎么挣（四渠道）× 怎么花（咨询/额度） |
+| [prices.md](prices.md) | 价格：代金券挣取渠道 × 消费定价（咨询/额度） |
 | [faq.md](faq.md) | 常见问题：跨专业/组队/费用/deadline/入职速度 |
 
 来源：量潮实训基地 2026-08-26 ~ 09-01 实践（journal qtclass/）
