@@ -43,4 +43,8 @@
 | [prices.md](prices.md) | 价格：代金券挣取渠道 × 消费定价（咨询/额度） |
 | [faq.md](faq.md) | 常见问题：跨专业/组队/费用/deadline/入职速度 |
 
+## 命名原则
+
+文档名用**客户视角的业务名词**（schedules 学习安排 / careers 成长通道 / prices 价格 / faq 常见问题）——客户在找什么，文档就叫什么；不用内部管理术语（如 growth/directions/vouchers 这类组织者发明的分类概念）。同一原则适用于本档案库所有新增文档。
+
 来源：量潮实训基地 2026-08-26 ~ 09-01 实践（journal qtclass/）
