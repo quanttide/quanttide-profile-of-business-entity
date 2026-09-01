@@ -39,7 +39,7 @@
 | 文档 | 内容 |
 |---|---|
 | [schedules.md](schedules.md) | 学习安排：产品/工程/商务/数据/支持五大方向的真实课题谱系 |
-| [growth.md](growth.md) | 成长与考核：成长速度参考、负数职级进度条、考核环节、甲方思维 |
+| [careers.md](careers.md) | 成长通道：成长速度参考、负数职级进度条、考核环节、甲方思维 |
 | [vouchers.md](vouchers.md) | 代金券：怎么挣（四渠道）× 怎么花（咨询/额度） |
 | [faq.md](faq.md) | 常见问题：跨专业/组队/费用/deadline/入职速度 |
 
