@@ -46,6 +46,7 @@
 | [schedules.md](schedules.md) | 学习安排：产品/工程/商务/数据/支持五大方向的真实课题谱系 |
 | [prices.md](prices.md) | 价格：任务参与免费 × 一对一咨询职级定价 |
 | [faq.md](faq.md) | 常见问题：跨专业/组队/费用/deadline/入职速度/治理参与 |
+| [operation.md](operation.md) | 运营方法论：筛选/缓冲池/治理下放/内部市场/氛围营造/文档沉淀 |
 
 ## 命名原则
 
