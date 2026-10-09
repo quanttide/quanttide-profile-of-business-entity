@@ -1,0 +1,70 @@
+kind: DataContract
+apiVersion: v3.0.0
+metadata:
+  name: raw.employee_survey_input
+  owner: Client_Data_Provider
+
+dataset:
+  - table: raw_survey_csv
+    description: 原始调研导出数据（CSV格式）
+    columns:
+      - name: submit_time
+        type: string
+        description: 客户原始提交时间（格式混乱：YYYY/MM/DD 或 DD/MM/YYYY）
+      - name: age
+        type: string
+        description: 年龄（包含"岁"、"二十八"、"未知"等杂质）
+      - name: total_exp
+        type: string
+        description: 工作年限（包含"年"、"刚入职"、"0"等）
+      - name: dept
+        type: string
+        description: 部门（包含"研发"、"销售部"、"R&D"等）
+      - name: overall_satis
+        type: string
+        description: 整体满意度（数字或中文"满意"，可能为NULL）
+      - name: workload
+        type: string
+        description: 工作负荷评分（1-5分，可能越界为10，可能为NULL）
+      - name: benefits_text
+        type: string
+        description: 各种分隔符混用的福利文本（; | , 、等）
+      - name: other_notes
+        type: string
+        description: 其他备注（可能与gender字段混合）
+      - name: gender
+        type: string
+        description: 性别（1/2, M/F, 男/女, 或包含备注信息的混合字段）
+      - name: edu
+        type: string
+        description: 教育程度（包含"MBA"需映射）
+      - name: emp_status
+        type: string
+        description: 雇佣状态（在职、返聘、非员工、学生等）
+      - name: tenure
+        type: string
+        description: 任期/司龄（数字或"0"）
+      - name: monthly_income
+        type: string
+        description: 月收入（包含"12K"、"15000元"、"-"、"保密"、"负数"等）
+      - name: city
+        type: string
+        description: 城市（中英文混杂："Shanghai"、"shang hai"、"上海"）
+      - name: benefit_pension
+        type: string
+        description: 养老金标识（0/1）
+      - name: benefit_annual_leave
+        type: string
+        description: 带薪年假标识（0/1）
+      - name: benefit_health_ins
+        type: string
+        description: 医疗保险标识（0/1）
+      - name: satis_q1
+        type: string
+        description: 满意度问题1（1-5分）
+      - name: satis_q2
+        type: string
+        description: 满意度问题2（1-5分）
+      - name: satis_q3
+        type: string
+        description: 满意度问题3（1-5分）

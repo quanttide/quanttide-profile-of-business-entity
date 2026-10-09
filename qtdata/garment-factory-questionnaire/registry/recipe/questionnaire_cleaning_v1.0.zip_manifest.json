@@ -1,0 +1,37 @@
+{
+  "recipe_id": "RC-QC-2026-001",
+  "name": "问卷数据清洗处理器",
+  "version": "1.0",
+  "created_at": "2026-01-16",
+  "archive_file": "questionnaire_cleaning_v1.0.zip",
+  "archive_size": "12K",
+  "archive_checksum": "placeholder",
+  "includes": [
+    {
+      "path": "processor/questionnaire_cleaner.py",
+      "size": 5127,
+      "description": "主处理器类"
+    },
+    {
+      "path": "plan/questionnaire_cleaning_plan.md",
+      "size": 5020,
+      "description": "数据处理计划"
+    },
+    {
+      "path": "schema/questionnaire_schema.json",
+      "size": 7289,
+      "description": "数据模式定义"
+    },
+    {
+      "path": "inspector/questionnaire_inspector.py",
+      "size": 15930,
+      "description": "数据质量检查器"
+    },
+    {
+      "path": "manifest/questionnaire_cleaning_recipe_manifest.json",
+      "size": 1613,
+      "description": "处理器清单"
+    }
+  ],
+  "license": "Copyright © 2026 Quanttide. All Rights Reserved."
+}

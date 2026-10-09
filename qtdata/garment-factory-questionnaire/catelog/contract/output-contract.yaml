@@ -1,0 +1,103 @@
+kind: DataContract
+apiVersion: v3.0.0
+metadata:
+  name: gold.employee_survey_analytics
+  owner: Data_Engineering_Team
+
+dataset:
+  - table: processed_survey_data
+    description: 经过清洗、去重、异常检测后的高价值数据
+    columns:
+      - name: id
+        type: integer
+        description: 唯一记录标识
+        constraints:
+          not_null: true
+      - name: submit_time
+        type: datetime
+        description: 标准化提交时间（YYYY-MM-DD HH:MM:SS）
+      - name: age
+        type: integer
+        constraints:
+          min: 16
+          max: 200 # 允许极端值，通过 data_quality_flag 标记
+          not_null: false # 可能缺失
+      - name: total_exp
+        type: float
+        description: 工作年限
+        constraints:
+          min: 0
+          max: 50
+          not_null: false
+      - name: dept
+        type: string
+        description: 部门（标准化：研发、销售、管理等）
+      - name: overall_satis
+        type: integer
+        description: 整体满意度（0-6分，NULL表示缺失）
+        constraints:
+          min: 0
+          max: 6
+          not_null: false
+      - name: workload
+        type: integer
+        description: 工作负荷评分（1-10分，越界值标记）
+        constraints:
+          min: 1
+          max: 10
+          not_null: false
+      - name: benefit_pension
+        type: boolean
+        description: 养老金标识
+      - name: benefit_annual_leave
+        type: boolean
+        description: 带薪年假标识
+      - name: benefit_health_ins
+        type: boolean
+        description: 医疗保险标识
+      - name: benefit_other
+        type: boolean
+        description: 其他福利标识
+      - name: other_notes
+        type: string
+        description: 从性别列或其他字段提取的备注信息
+      - name: gender
+        type: string
+        description: 性别（标准化为 male/female/unknown）
+      - name: edu
+        type: string
+        description: 教育程度（MBA映射为硕士）
+      - name: emp_status
+        type: string
+        description: 雇佣状态
+      - name: tenure
+        type: float
+        description: 任期/司龄（支持小数如0.5）
+        constraints:
+          min: 0
+          max: 50
+          not_null: false
+      - name: monthly_income
+        type: float
+        description: 月收入（负数转为NULL，单位：元）
+        constraints:
+          min: 0
+          max: 35000
+          not_null: false
+      - name: city
+        type: string
+        description: 城市（标准化中文）
+      - name: is_duplicate
+        type: boolean
+        description: 是否为重复记录
+      - name: data_quality_flag
+        type: string
+        description: 质量标签（正常、逻辑校验_学生、逻辑校验_退休、异常值_收入负数_工作负荷越界、测试数据等）
+
+quality:
+  - type: comparison
+    description: 确保 Clean 数据的记录数 = Source 数据的唯一记录数（去重后）
+  - type: schema
+    description: 确保所有数据类型符合契约定义
+  - type: constraint
+    description: 确保数值字段在约束范围内或标记为异常

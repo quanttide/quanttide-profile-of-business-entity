@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据精炼 Blueprint 模板</title>
+<style>
+:root{--bg:#f8f9fa;--card:#fff;--border:#dee2e6;--text:#212529;--muted:#6c757d;--blue:#2563eb;--blue-l:#eff6ff;--green:#059669;--green-l:#ecfdf5;--amber:#d97706;--amber-l:#fffbeb;--red:#dc2626;--red-l:#fef2f2;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:2rem 1rem;}
+.container{max-width:960px;margin:0 auto;}
+h1{font-size:1.75rem;font-weight:700;margin-bottom:.25rem;}
+.subtitle{color:var(--muted);font-size:.95rem;margin-bottom:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+.subtitle a{color:var(--blue);}
+.badge{display:inline-block;padding:.15rem .75rem;border-radius:999px;font-size:.8rem;font-weight:600;}
+.badge-submitted{background:var(--amber-l);color:var(--amber);}
+.badge-draft{background:#f1f3f5;color:var(--muted);}
+.badge-new{background:var(--green-l);color:var(--green);}
+.badge-dropped{background:var(--red-l);color:var(--red);}
+.section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.5rem 2rem;margin-bottom:1.5rem;}
+.section h2{font-size:1.15rem;font-weight:700;color:var(--blue);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--blue-l);}
+table{width:100%;border-collapse:collapse;font-size:.9rem;}
+th,td{text-align:left;padding:.6rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;}
+th{font-weight:600;color:var(--muted);font-size:.8rem;}
+.pipeline{counter-reset:step;}
+.step{display:flex;gap:1rem;padding:.75rem 0;border-left:3px solid var(--blue-l);padding-left:1.5rem;position:relative;}
+.step:not(:last-child){border-left-color:var(--blue);}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:-14px;top:.75rem;width:26px;height:26px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;}
+.step-name{font-weight:700;font-size:1rem;}
+.step-desc{font-size:.9rem;color:var(--muted);margin:.25rem 0;}
+.step-files{font-size:.8rem;color:var(--muted);}
+.step-files code{background:#f1f3f5;padding:.1rem .4rem;border-radius:4px;font-size:.8rem;}
+.step-depends{font-size:.8rem;color:var(--amber);margin-top:.25rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-bottom:1rem;}
+.grid-item{background:var(--blue-l);border-radius:8px;padding:.75rem 1rem;}
+.grid-item .label{font-size:.8rem;color:var(--muted);}
+.grid-item .value{font-size:.9rem;font-weight:600;}
+.tag{display:inline-block;font-size:.7rem;padding:.1rem .5rem;border-radius:4px;font-weight:600;margin-left:.4rem;}
+.tag-v3{background:var(--blue-l);color:var(--blue);}
+.tag-v3{background:var(--green-l);color:var(--green);}
+.tag-drop{background:var(--red-l);color:var(--red);}
+code{background:#f1f3f5;padding:.1rem .4rem;border-radius:4px;font-size:.85rem;}
+.footer{text-align:center;font-size:.85rem;color:var(--muted);padding:2rem 0;}
+.footer a{color:var(--blue);}
+.pipeline-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:.5rem;align-items:start;}
+.pc-col-header{font-weight:700;font-size:.85rem;color:var(--muted);text-transform:uppercase;margin-bottom:.5rem;}
+.pc-step{padding:.4rem .75rem;margin-bottom:.35rem;background:var(--blue-l);border-radius:6px;font-size:.85rem;display:flex;align-items:center;gap:.5rem;}
+.pc-step-new{background:var(--green-l);}
+.pc-num{display:inline-flex;width:20px;height:20px;background:var(--blue);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;}
+.pc-arrow{display:flex;flex-direction:column;gap:.35rem;padding-top:1.5rem;}
+.pc-arrow-cell{padding:.4rem .25rem;font-size:.75rem;color:var(--muted);text-align:center;height:32px;display:flex;align-items:center;}
+.pc-arrow-split{color:var(--green);font-weight:600;}
+.pc-note{grid-column:1/-1;font-size:.85rem;color:var(--muted);padding:.75rem;background:#f1f3f5;border-radius:8px;margin-top:.5rem;}
+.iter-section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 2rem;margin-bottom:1.5rem;}
+.iter-section h2{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.75rem;}
+.iter-table{width:100%;border-collapse:collapse;font-size:.85rem;}
+.iter-table th,.iter-table td{padding:.4rem .75rem;border-bottom:1px solid var(--border);text-align:left;}
+.iter-table th{font-weight:600;color:var(--muted);font-size:.78rem;}
+.iter-note{font-size:.82rem;color:var(--muted);margin-top:.75rem;padding:.6rem;background:var(--blue-l);border-radius:6px;}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>数据精炼 Blueprint 模板</h1>
+<div class="subtitle">
+<span>负责人：@负责人</span>
+<span><span class="badge badge-draft">草稿</span></span>
+<span>仓库：{{repo_url}}</span>
+</div>
+
+<!-- 迭代记录（已脱敏）-->
+<div class="iter-section">
+<h2>版本迭代</h2>
+<table class="iter-table">
+<tr><th>版本</th><th>状态</th><th>用户数</th><th>列数</th><th>管道步数</th><th>时间</th></tr>
+<tr>
+<td><strong>V2</strong></td>
+<td><span class="badge badge-draft">待补充</span></td>
+<td>数万级</td>
+<td>N</td>
+<td>14</td>
+<td>已脱敏</td>
+</tr>
+<tr>
+<td><strong>V3</strong></td>
+<td><span class="badge badge-draft">规划中</span></td>
+<td>数万级</td>
+<td>M</td>
+<td>16</td>
+<td>已脱敏</td>
+</tr>
+</table>
+<p class="iter-note"><strong>V3 变更：</strong>维度 D 拆分为多个子口径；维度 C 拆分为多个子类型；用户名单缩减；管道步数从 14 步增至 16 步。实际变量选择和口径定义属于客户计量建模核心资产，此处已脱敏。</p>
+</div>
+
+<!-- 原始需求 -->
+<div class="section">
+<h2>原始需求</h2>
+<p style="margin-bottom:1rem">基于数万级样本，衔接公开数据源，匹配第三方平台信息，最终产出每日活动面板（daily activity panel）。</p>
+<h3>数据来源</h3>
+<div class="grid">
+<div class="grid-item">
+<div class="label">主数据库</div>
+<div class="value">{{mysql_dump}}</div>
+<div style="font-size:.8rem;color:var(--muted)">公开数据项目抓取的全量数据</div>
+</div>
+<div class="grid-item">
+<div class="label">ID 列表</div>
+<div class="value">{{user_list}}</div>
+<div style="font-size:.8rem;color:var(--muted)">数万级用户</div>
+</div>
+</div>
+<p style="font-size:.85rem;color:var(--muted);margin-top:.5rem"><strong>注：</strong>用户数量精确值已脱敏。</p>
+</div>
+
+<!-- 输出变量（已脱敏）-->
+<div class="section">
+<h2>输出变量 <span style="font-weight:400;font-size:.85rem;color:var(--muted)">CSV · M 列（已脱敏）</span></h2>
+<table>
+<tr><th style="width:30%">变量</th><th>描述</th><th style="width:80px">版本</th></tr>
+<tr><td><code>col_01</code></td><td>去标识化的数字标识符</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr><td><code>col_02</code></td><td>账户标识名</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr><td><code>col_03</code></td><td>活动观察日期</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr><td><code>col_04</code></td><td>维度 A 的日计数</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr><td><code>col_05</code></td><td>维度 B 的日计数</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr><td><code>col_06</code></td><td>维度 C 的日计数</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr><td><code>col_07</code></td><td>控制变量（二进制指示器）</td><td><span class="tag tag-v3">V2</span></td></tr>
+<tr style="background:var(--green-l)"><td><code>col_08</code></td><td>维度 D 子口径一的日计数</td><td><span class="tag tag-v3">V3 新增</span></td></tr>
+<tr style="background:var(--green-l)"><td><code>col_09</code></td><td>维度 D 子口径二的日计数</td><td><span class="tag tag-v3">V3 新增</span></td></tr>
+<tr style="background:var(--green-l)"><td><code>col_10</code></td><td>维度 D 活跃子口径一的日计数</td><td><span class="tag tag-v3">V3 新增</span></td></tr>
+<tr style="background:var(--green-l)"><td><code>col_11</code></td><td>维度 D 活跃子口径二的日计数</td><td><span class="tag tag-v3">V3 新增</span></td></tr>
+<tr style="background:var(--green-l)"><td><code>col_12</code></td><td>维度 C 子类型一的日计数</td><td><span class="tag tag-v3">V3 新增</span></td></tr>
+<tr style="background:var(--green-l)"><td><code>col_13</code></td><td>维度 C 子类型二的日计数</td><td><span class="tag tag-v3">V3 新增</span></td></tr>
+<tr style="background:var(--red-l);text-decoration:line-through;color:var(--muted)"><td><code>col_07_old</code></td><td>维度 C 子类型旧口径日计数</td><td><span class="tag tag-drop">V2 废弃</span></td></tr>
+<tr style="background:var(--red-l);text-decoration:line-through;color:var(--muted)"><td><code>col_08_old</code></td><td>维度 D 旧口径日计数</td><td><span class="tag tag-drop">V2 废弃</span></td></tr>
+<tr style="background:var(--red-l);text-decoration:line-through;color:var(--muted)"><td><code>col_09_old</code></td><td>维度 D 活跃旧口径日计数</td><td><span class="tag tag-drop">V2 废弃</span></td></tr>
+</table>
+<p style="font-size:.82rem;color:var(--muted);margin-top:.75rem;padding:.6rem;background:var(--blue-l);border-radius:6px"><strong>注意：</strong>实际变量名称、口径定义与选择策略属于客户计量建模核心资产，此处已替换为通用占位符。绿色 = V3 新增维度细分，红色 = V2 废弃旧口径。</p>
+</div>
+
+<!-- 精炼管道（已脱敏）-->
+<div class="section">
+<h2>精炼管道 <span style="font-weight:400;font-size:.85rem;color:var(--muted)">V2 14 步 → V3 16 步（已脱敏）</span></h2>
+<div class="pipeline-compare">
+<div class="pc-col"><div class="pc-col-header">V2</div>
+<div class="pc-step"><span class="pc-num">1</span>环境搭建与数据下载</div>
+<div class="pc-step"><span class="pc-num">2</span>数据解压与提取</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">3</span>用户匹配</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">4</span>实体筛选</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">5</span>关联筛选</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">6</span>事件筛选 A</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">7</span>事件筛选 B</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">8</span>活跃判定</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">9</span>维度 A 日聚合</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">10</span>维度 D 日聚合</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">11</span>维度 D 活跃日聚合</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">12</span>维度 C 日聚合</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">13</span>面板合并</div>
+<div class="pc-step"><span class="pc-num">14</span>数据验证与交付</div>
+</div>
+<div class="pc-arrow">
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell">→</div>
+<div class="pc-arrow-cell pc-arrow-split">→ 拆分为</div>
+<div class="pc-arrow-cell pc-arrow-split">→ 拆分为</div>
+<div class="pc-arrow-cell pc-arrow-split">→ 拆分为</div>
+<div class="pc-arrow-cell pc-arrow-split">→</div>
+<div class="pc-arrow-cell">→</div>
+</div>
+<div class="pc-col"><div class="pc-col-header">V3</div>
+<div class="pc-step"><span class="pc-num">1</span>环境搭建与数据下载</div>
+<div class="pc-step"><span class="pc-num">2</span>数据解压与提取</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">3</span>用户匹配</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">4</span>实体筛选</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">5</span>关联筛选</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">6</span>事件筛选 A</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">7</span>事件筛选 B</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">8</span>活跃判定</div>
+<div class="pc-step pc-step-changed"><span class="pc-num">9</span>维度 A 日聚合</div>
+<div class="pc-step pc-step-new"><span class="pc-num">10</span>维度 D 子口径一 日聚合</div>
+<div class="pc-step pc-step-new"><span class="pc-num">11</span>维度 D 子口径二 日聚合</div>
+<div class="pc-step pc-step-new"><span class="pc-num">12</span>维度 D 活跃子口径一 日聚合</div>
+<div class="pc-step pc-step-new"><span class="pc-num">13</span>维度 D 活跃子口径二 日聚合</div>
+<div class="pc-step pc-step-new"><span class="pc-num">14</span>维度 C 子类型拆分聚合</div>
+<div class="pc-step pc-step-new"><span class="pc-num">15</span>面板合并</div>
+<div class="pc-step"><span class="pc-num">16</span>数据验证与交付</div>
+</div>
+</div>
+<div class="pc-note"><strong>管道变化：</strong>V2 的维度 D 聚合拆分为多子口径；维度 C 聚合拆分为多子类型。总步骤从 14 步增至 16 步。实际拆分策略和聚合口径属于客户研究方法论，此处已脱敏。</div>
+</div>
+</div>
+
+<div class="footer">
+数据源：<a href="blueprint.cue">blueprint.cue</a> · 代码：{{repo_url}}
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "dataset_id": "DS-QC-20260116",
+  "name": "问卷清洗后数据集",
+  "version": "1.0",
+  "created_at": "2026-01-16",
+  "processed_by_recipe": "RC-QC-2026-001",
+  "input_data_hash": "placeholder",
+  "input_file": "record/questionnaire_raw.csv",
+  "output_file": "record/questionnaire_cleanned.csv",
+  "stats": {
+    "total_rows": 10,
+    "total_columns": 11,
+    "columns": [
+      "submit_time",
+      "age",
+      "tenure_years",
+      "department",
+      "satisfaction",
+      "workload",
+      "benefits_raw",
+      "benefit_insurance",
+      "benefit_vacation",
+      "benefit_medical",
+      "other_dept_specify"
+    ],
+    "data_range": {
+      "start_date": "2025-12-01",
+      "end_date": "2025-12-10"
+    },
+    "demographics": {
+      "age": {
+        "min": 18,
+        "max": 60,
+        "mean": 38.4
+      },
+      "tenure_years": {
+        "min": 0.5,
+        "max": 35.0,
+        "mean": 11.2
+      }
+    },
+    "department_distribution": {
+      "研发": 3,
+      "销售": 2,
+      "职能": 2,
+      "生产": 1,
+      "其他": 2
+    }
+  },
+  "quality_assurance": {
+    "schema_compliance": "PASS",
+    "data_quality": "PASS",
+    "business_rules": "PASS",
+    "total_issues": 0
+  },
+  "license": "授权仅限合同约定用途，禁止再分发。",
+  "description": "清洗后的问卷数据，包含 10 条记录，符合蓝图定义的所有规则，通过全部质量检查。"
+}

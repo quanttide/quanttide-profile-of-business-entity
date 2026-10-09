@@ -1,0 +1,52 @@
+{
+  "recipe_id": "RC-QC-2026-001",
+  "name": "问卷数据清洗处理器",
+  "version": "1.0",
+  "created_at": "2026-01-16",
+  "updated_at": "2026-01-16",
+  "status": "active",
+  "components": {
+    "processor": {
+      "file": "processor/questionnaire_cleaner.py",
+      "class": "QuestionnaireCleaner",
+      "description": "主处理器类，执行数据清洗流程"
+    },
+    "plan": {
+      "file": "plan/questionnaire_cleaning_plan.md",
+      "description": "数据处理计划，定义字段和转换规则"
+    },
+    "schema": {
+      "file": "schema/questionnaire_schema.json",
+      "description": "数据模式定义，包含字段和质量规则"
+    },
+    "inspector": {
+      "file": "inspector/questionnaire_inspector.py",
+      "class": "QuestionnaireInspector",
+      "description": "数据质量检查器，验证清洗结果"
+    }
+  },
+  "input_schema": {
+    "format": "CSV",
+    "encoding": "UTF-8",
+    "required_columns": ["提交时间", "年龄", "工作年限", "所属部门", "满意度", "工作负荷", "福利选项", "其他说明"]
+  },
+  "output_schema": {
+    "format": "CSV",
+    "encoding": "UTF-8",
+    "columns": [
+      "submit_time",
+      "age",
+      "tenure_years",
+      "department",
+      "satisfaction",
+      "workload",
+      "benefits_raw",
+      "benefit_insurance",
+      "benefit_vacation",
+      "benefit_medical",
+      "other_dept_specify"
+    ]
+  },
+  "license": "Copyright © 2026 Quanttide. All Rights Reserved.",
+  "description": "用于清洗问卷数据的处理器，包含完整的数据转换逻辑和质量验证功能。"
+}

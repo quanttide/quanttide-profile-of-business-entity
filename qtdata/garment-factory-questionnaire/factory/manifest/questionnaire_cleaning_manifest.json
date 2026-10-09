@@ -1,0 +1,53 @@
+{
+  "order_id": "ORD-QC-20260116-001",
+  "customer": "questionnaire_cleaning",
+  "project_name": "questionnaire_cleaning",
+  "created_at": "2026-01-16",
+  "updated_at": "2026-01-16",
+  "status": "completed",
+  "includes": [
+    {
+      "type": "recipe",
+      "file": "processor/questionnaire_cleaner.py",
+      "id": "RC-QC-2026-001",
+      "description": "问卷数据清洗处理器 v1.0"
+    },
+    {
+      "type": "dataset",
+      "file": "record/questionnaire_cleaned.csv",
+      "id": "DS-QC-20260116",
+      "description": "问卷清洗后数据集",
+      "processed_by": "RC-QC-2026-001"
+    },
+    {
+      "type": "plan",
+      "file": "plan/questionnaire_cleaning_plan.md",
+      "description": "数据处理计划"
+    },
+    {
+      "type": "schema",
+      "file": "schema/questionnaire_schema.json",
+      "description": "数据模式定义"
+    },
+    {
+      "type": "inspector",
+      "file": "inspector/questionnaire_inspector.py",
+      "description": "数据质量检查器"
+    },
+    {
+      "type": "report",
+      "file": "report/questionnaire_cleaning_report.md",
+      "description": "数据清洗报告"
+    }
+  ],
+  "quality_assurance": {
+    "status": "passed",
+    "inspector_result": {
+      "schema_compliance": "PASS",
+      "data_quality": "PASS",
+      "business_rules": "PASS",
+      "total_checks": 25,
+      "total_issues": 0
+    }
+  }
+}

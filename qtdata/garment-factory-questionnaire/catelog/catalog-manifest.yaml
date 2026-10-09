@@ -1,0 +1,78 @@
+apiVersion: v3.0.0
+kind: DataCatalog
+metadata:
+  namespace: hr_analytics
+  updated_at: 2026-01-21T20:00:00Z
+
+# 定义数据产品（Data Product）的总入口
+data_products:
+  - id: emp_satisfaction_study
+    name: 员工满意度研究项目
+    description: 包含从原始问卷收集到清洗后的全链路数据资产
+
+    # 1. 原始数据资产 (Source Asset)
+    assets:
+      - id: raw_survey_csv
+        type: file_system
+        contract_ref: workspace/catelog/contract/source-contract.yaml
+        path: workspace/catelog/record/dirty.csv
+        format: csv
+        status: ACTIVE
+        tags: [PII, Dirty, Client_Provided]
+        version: v2.0.0
+        row_count: 19
+        description: 原始调研数据，包含19条记录（含1条重复），覆盖多种数据质量问题
+
+      # 2. 清洗后数据资产 (Output Asset)
+      - id: clean_survey_csv
+        type: file_system
+        contract_ref: workspace/catelog/contract/output-contract.yaml
+        path: workspace/catelog/record/clean.csv
+        format: csv
+        status: PRODUCTION
+        tags: [Certified, Analytics_Ready, Validated]
+        lineage:
+          upstream: [raw_survey_csv]
+          process: "Data_Cleaning_Pipeline_v2"
+          transformation:
+            - description: 日期格式标准化（YYYY/MM/DD → YYYY-MM-DD）
+            - description: 年龄/年限单位提取（"35岁" → 35, "8年" → 8）
+            - description: 收入单位转换（"12K" → 12000, "15000元" → 15000）
+            - description: 城市名称标准化（Shanghai/shang hai → 上海）
+            - description: 福利文本分词（长转宽，One-Hot编码）
+            - description: 去重（删除重复记录）
+            - description: 异常值处理（负数收入转NULL，工作负荷截断）
+            - description: 数据质量标记（添加 data_quality_flag）
+        row_count: 19
+
+# 3. 关联的测试样例与基准 (Quality Baseline)
+quality_baselines:
+  - asset_ref: clean_survey_csv
+    test_data_ref: workspace/catelog/record/clean.csv
+    last_validation: 2026-01-21
+    status: PASSED
+    validation_rules:
+      - rule: "重复记录检测（is_duplicate=1仅1条）"
+      - rule: "负数收入处理（monthly_income无负数）"
+      - rule: "工作负荷范围检查（workload在1-5之间）"
+      - rule: "数据类型验证（所有字段符合契约定义）"
+      - rule: "记录数一致性（Clean = Source - 重复）"
+
+# 4. 测试覆盖场景
+test_scenarios:
+  - name: 日期格式解析
+    description: 测试YYYY/MM/DD和DD/MM/YYYY混合格式
+  - name: 数值单位清洗
+    description: 测试"岁"、"年"、"K"、"元"等单位提取
+  - name: 分隔符处理
+    description: 测试; | , 、等多种分隔符
+  - name: 文本信息提取
+    description: 测试从性别列提取备注信息
+  - name: 城市名称标准化
+    description: 测试中英文混合城市名
+  - name: 异常逻辑检测
+    description: 测试学生(16岁)、退休(60岁)等特殊场景
+  - name: 重复数据识别
+    description: 测试完全相同记录的去重
+  - name: 极端异常值处理
+    description: 测试age=200, income=-50000等极端值

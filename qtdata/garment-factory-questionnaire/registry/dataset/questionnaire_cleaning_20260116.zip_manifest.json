@@ -1,0 +1,27 @@
+{
+  "dataset_id": "DS-QC-20260116",
+  "name": "问卷清洗后数据集",
+  "version": "1.0",
+  "created_at": "2026-01-16",
+  "archive_file": "questionnaire_cleaning_20260116.zip",
+  "archive_size": "4.4K",
+  "archive_checksum": "placeholder",
+  "includes": [
+    {
+      "path": "record/questionnaire_cleanned.csv",
+      "size": 759,
+      "description": "清洗后数据集（10条记录）"
+    },
+    {
+      "path": "manifest/questionnaire_dataset_manifest.json",
+      "size": 1413,
+      "description": "数据集清单"
+    },
+    {
+      "path": "report/questionnaire_cleanning_report.md",
+      "size": 6961,
+      "description": "数据清洗报告"
+    }
+  ],
+  "license": "授权仅限合同约定用途，禁止再分发。"
+}
