@@ -5,6 +5,7 @@
 ### Added
 - `qtclass/learn/index.md`：实训学习业务方向档案（真实工作即课堂、学习方式、成长进度条、代金券制度、参与通道）
 - `qtclass/course/practise_ladder.md`、`qtclass/course/production-intership.md`：自 brochure 同名篇迁入——实践课三级阶梯（见过/做过/做成过）、生产实习课程方案与招聘考核复用，原样平移不改写
+- `qtclass/business/index.md`：合作方式（G 校企合作/B 企业培训与人才交付/C 个人学习）自 brochure/qtclass/index.md 迁入；qtclass 业务档案在 profile 集齐课程、实践、招聘、合作四组
 
 ### Changed
 - `qtclass/course/index.md` 合并 handbook 与 brochure 同名篇：以六门课清单为主干，吸收服务形态、课程基石、理论课与实践课详解、议事型课堂、三方共担、经营定位；profile 回到文档模式，作为课程体系单一事实源
