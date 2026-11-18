@@ -5,6 +5,9 @@
 ### Added
 - `qtclass/learn/index.md`：实训学习业务方向档案（真实工作即课堂、学习方式、成长进度条、代金券制度、参与通道）
 
+### Changed
+- `qtclass/course/index.md` 合并 handbook 与 brochure 同名篇：以六门课清单为主干，吸收服务形态、课程基石、理论课与实践课详解、议事型课堂、三方共担、经营定位；profile 回到文档模式，作为课程体系单一事实源
+
 ### Removed
 - 删除已迁移或过时的 qtclass 数据（courses.json、zstu-big-data、quotation）
 - 删除空档案：`qtdata/datasets.json`、`qtcloud/resources.json`（内容均为空 `records`）
